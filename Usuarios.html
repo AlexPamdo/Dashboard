@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="Assets/index.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Document</title>
+</head>
+
+<body data-bs-spy="scroll">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="offcanvas offcanvas-start bg-rj-blue text-white" data-bs-scroll="true" tabindex="-1"
+        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <a href="#" class="nav-link d-flex align-items-center gap-2 active text-white fw-bolder">
+            <img src="Assets/img/logo2.png" alt="" height="40" width="45" />
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+              ROMEO Y JULIETA
+            </h5>
+          </a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link p-2 d-flex align-items-center gap-2 active text-white fw-bolder rj-offcanva-link"
+                href="index.html"><i><img src="Assets/icons/WHite icons/menu-regular-24.png" alt="" /></i>
+                Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 d-flex align-items-center gap-2 active text-white fw-bolder rj-offcanva-link"
+                href="Inventario.html"><i><img src="Assets/icons/WHite icons/cart-alt-solid-24.png" alt="" /></i>
+                Inventario</a>
+            </li>
+            <li class="nav-item">
+              <a class="rj-link-active nav-link p-2 d-flex align-items-center gap-2 active text-white fw-bolder rj-offcanva-link"
+                href="clientes/index.html"><i><img src="Assets/icons/WHite icons/happy-regular-24.png"
+                    alt="" /></i>Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 d-flex align-items-center gap-2 active text-white fw-bolder rj-offcanva-link"
+                href="Proovedores.html"><i><img src="Assets/icons/WHite icons/dollar-circle-solid-24.png"
+                    alt="" /></i>Provedores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 d-flex align-items-center gap-2 active text-white fw-bolder rj-offcanva-link"
+                href="Envios.html"><i><img src="Assets/icons/WHite icons/plane-solid-24.png" alt="" /></i>Envios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 d-flex align-items-center gap-2 active text-white fw-bolder rj-offcanva-link"
+                href="#">
+                <i><img src="Assets/icons/WHite icons/laptop-regular-24.png" alt="" /></i>En proceso</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <main class="ms-sm-auto p-0">
+        <header class="navbar navbar-expand-lg p-0 bd-navbar bg-rj-blue sticky-top">
+          <nav class="navbar container-xxl p-0 bd-gutter flex-wrap flex-lg-nowrap navbar-expand-lg">
+            <div class="container-fluid">
+              <button class="btn btn-rj-blue" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <img src="Assets/icons/WHite icons/menu-regular-24.png" alt="" />
+              </button>
+
+              <h3 class="p-3 text-white">Usuarios</h3>
+
+              <div class="navbar-collapse flex justify-content-end row" id="navbarNav">
+                <ul class="navbar-nav d-flex justify-content-end col-6">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i><img src="Assets/icons/WHite icons/user-solid-24.png" height="30" /></i>
+                    </a>
+
+
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Perfil</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Panel administrativo</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Cerrar seccion</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex col-6" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                  <button class="btn-rj-blue" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <div class="container p-3">
+          <nav class="navbar navbar-expand-lg d-flex justify-content-between p-3 row">
+            <div class="col-4 col-md-4">
+              <button type="button" class="btn btn-rj-blue" data-bs-toggle="modal" data-bs-target="#CrearModal">
+                Crear
+              </button>
+            </div>
+
+            <form class="d-flex col-8 col-md-4" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar Usuario" aria-label="Search" />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form>
+          </nav>
+
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Gmail</th>
+                  <th scope="col">Permisos</th>
+                  <th scope="col">Acciones</th>
+
+                </tr>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Alex David</td>
+                  <td>Pire Lopez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="admin">
+                      ADMIN
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Alejandro Manuel</td>
+                  <td>Perez Silva</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Maria Manuela</td>
+                  <td>Silva Rodriguez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Alex David</td>
+                  <td>Perez Perez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="admin">
+                      ADMIN
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Raul Manuel</td>
+                  <td>Rodriguez Perez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Julian Jose</td>
+                  <td>Lopez Obrador</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Dulce Maria</td>
+                  <td>Perez Rodriguez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Alejandro Alberto</td>
+                  <td>Perez Silva</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Arianny Maria</td>
+                  <td>Perez Perez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Elisa Brithney</td>
+                  <td>Muñoz Rodriguez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="user">
+                      USER
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Leixer Jose</td>
+                  <td>Angulo Yepez</td>
+                  <td>Examplegmail@gmail.com</td>
+                  <td>
+                    <div class="admin">
+                      ADMIN
+                    </div>
+                  </td>
+                  <td class="d-flex">
+                    <button class="btn btn-success m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#EditarModal">
+                      <img src="Assets/icons/WHite icons/edit-alt-solid-24.png" alt="" />
+                    </button>
+                    <button class="btn btn-danger m-1 btn-sm" data-bs-toggle="modal" data-bs-target="#BorrarModal">
+                      <img src="Assets/icons/WHite icons/trash-alt-solid-24.png" alt="" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+
+              </thead>
+
+            </table>
+
+            <!-- Modal Para Crear -->
+            <div class="modal fade" id="CrearModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                      Crear Usuario
+                    </h1>
+                  </div>
+                  <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                      <div class="container container-form d-flex flex-column p-3">
+
+                        <label for="validationCustom01">Nombres</label>
+                        <div class="form-label input-group flex-nowrap m-2">
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="Alex David"
+                            aria-label="Username" aria-describedby="addon-wrapping" />
+                          <div class="valid-feedback"></div>
+                        </div>
+                        <label for="">Apellidos</label>
+                        <div class="input-group flex-nowrap m-2">
+                          <input type="text" class="form-control" placeholder="Lopez Perez" aria-label="Username"
+                            aria-describedby="addon-wrapping" />
+                        </div>
+                        <label for="">Gmail </label>
+                        <div class="input-group flex-nowrap m-2">
+                          <input type="text" class="form-control" placeholder="Example@gmail.com" aria-label="Username"
+                            aria-describedby="addon-wrapping" />
+                        </div>
+
+
+
+                        <div class="input-group pt-3 pb-3 ">
+                          <select class="form-select" id="inputGroupSelect02">
+                            <option selected>Tipo</option>
+                            <option value="1">Admin</option>
+                            <option value="2">User</option>
+
+                          </select>
+                        </div>
+
+
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          Cerrar
+                        </button>
+                        <button type="submit" class="btn btn-rj-blue">
+                          Registrar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal de Editar -->
+            <div class="modal fade" id="EditarModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                      Editar Usuario
+                    </h1>
+                  </div>
+                  <div class="modal-body">
+                    <div class="d-flex">
+                      <div class="container container-form d-flex flex-column p-3">
+
+                        <label for="validationCustom01">Nombres</label>
+                        <div class="form-label input-group flex-nowrap m-2">
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="Alex David"
+                            aria-label="Username" aria-describedby="addon-wrapping" />
+                          <div class="valid-feedback"></div>
+                        </div>
+                        <label for="">Apellidos</label>
+                        <div class="input-group flex-nowrap m-2">
+                          <input type="text" class="form-control" placeholder="Lopez Perez" aria-label="Username"
+                            aria-describedby="addon-wrapping" />
+                        </div>
+                        <label for="">Gmail </label>
+                        <div class="input-group flex-nowrap m-2">
+                          <input type="text" class="form-control" placeholder="Example@gmail.com" aria-label="Username"
+                            aria-describedby="addon-wrapping" />
+                        </div>
+
+
+
+                        <div class="input-group pt-3 pb-3 ">
+                          <select class="form-select" id="inputGroupSelect02">
+                            <option selected>Tipo</option>
+                            <option value="1">Admin</option>
+                            <option value="2">User</option>
+
+                          </select>
+                        </div>
+
+
+                      </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                      </button>
+                      <button type="button" class="btn btn-rj-blue">
+                        Guardar Cambios
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal de borrar -->
+            <div class="modal fade" id="BorrarModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                      Borrar Usuario
+                    </h1>
+                  </div>
+                  <div class="modal-body text-center">
+                    <h3>¿Estas seguro que quieres eliminar este Usuario?</h3>
+                    <h5>(No podras recuperalo luego)</h5>
+                  </div>
+                  <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Cerrar
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                      Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <nav class="d-flex justify-content-center" aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item" aria-current="page">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
